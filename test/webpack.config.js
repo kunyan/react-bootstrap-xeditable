@@ -1,9 +1,9 @@
 module.exports = {
-  entry: './test.jsx',
+  entry: './app.jsx',
   output: {
     path: './',
     publicPath: 'http://localhost:9000/',
-    filename: 'test.js',
+    filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   },
 
@@ -17,14 +17,10 @@ module.exports = {
 
   module: {
     loaders: [
-      // All files with a '.js' or '.jsx' extension will be handled by 'awesome-typescript-loader'.
       {
         test: /\.js(x)?$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        query: {
-          presets: ['react']
-        }
       }
     ],
 

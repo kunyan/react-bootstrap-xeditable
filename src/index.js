@@ -1,6 +1,4 @@
-module.exports = {
-  EditableTextField: require('./EditableTextField.jsx'),
-  EditableTextArea: require('./EditableTextArea.jsx'),
-  EditableSelect: require('./EditableSelect.jsx'),
-  EditableLink: require('./EditableLink.jsx'),
-};
+export EditableTextField from './EditableTextField.jsx';
+export EditableTextArea from './EditableTextArea.jsx';
+export EditableSelect from './EditableSelect.jsx';
+export EditableLink from './EditableLink.jsx';

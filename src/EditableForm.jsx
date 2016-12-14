@@ -1,13 +1,22 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+import React from 'react';
 
-const EditableForm = React.createClass({
+export default class EditableForm extends React.Component {
+  static propTypes = {
+    submit: React.PropTypes.func.isRequired,
+    children: React.PropTypes.element.isRequired,
+  };
+  constructor(props) {
+     super(props);
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    alert(1231);
+  };
   render() {
     return (
-      <form className='form-inline editableform'>
+      <form className='form-inline editableform' onSubmit={this.props.submit}>
         {this.props.children}
       </form>
     );
-  }
-});
-module.exports = EditableForm;
+  };
+}

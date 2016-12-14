@@ -1,37 +1,54 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const EditableLink = require('./EditableLink.jsx');
-const EditableLoading = require('./EditableLoading.jsx');
-const EditableButtons = require('./EditableButtons.jsx');
-const EditableForm = require('./EditableForm.jsx');
-const EditableTextField = React.createClass({
-  getInitialState() {
-    return {};
-  },
-  save() {
+import React from 'react';
+import EditableLink from './EditableLink.jsx';
+import EditableLoading from './EditableLoading.jsx';
+import EditableButtons from './EditableButtons.jsx';
+import EditableForm from './EditableForm.jsx';
+
+export default class EditableTextField extends React.Component {
+  static defaultProps = {
+    name: null,
+    value: '',
+    placeholder: ''
+  };
+  static propTypes = {
+    name: React.PropTypes.string.isRequired,
+    value: React.PropTypes.string,
+    placeholder: React.PropTypes.string,
+    onUpdate: React.PropTypes.func.isRequired
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEditing: false,
+    };
+    this.setState = this.setState.bind(this);
+  };
+  save = (event) => {
+    event.preventDefault();
     this.props.onUpdate(this.props.name, this.refs.input.value);
     this.setState({isEditing: false});
-  },
-  cancel() {
+  };
+  cancel = () => {
     this.setState({isEditing: false});
-  },
-  clear() {
+  };
+  clear = () => {
     this.refs.input.value = '';
-    console.log(123);
-  },
-  handleClick(event) {
+  };
+  handleLinkClick = (event) => {
     this.setState({isEditing: true});
-  },
+  };
   render() {
     if (this.state.isEditing) {
       return (
         <span className='editable-container editable-inline'>
           <div>
             {this.state.isLoading && (<EditableLoading/>)}
-            <EditableForm>
+            <EditableForm submit={this.save}>
               <div className='control-group form-group'>
                 <div>
-                  <div className='editable-input' style={{position: 'relative'}}>
+                  <div className='editable-input' style={{
+                    position: 'relative'
+                  }}>
                     <input ref='input' type='text' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
                     <span className='editable-clear-x' onClick={this.clear}></span>
                   </div>
@@ -44,9 +61,7 @@ const EditableTextField = React.createClass({
         </span>
       );
     } else {
-      return <EditableLink handler={this.handleClick} text={this.props.value}/>
+      return <EditableLink handler={this.handleLinkClick} text={this.props.value}/>
     }
-  }
-});
-
-module.exports = EditableTextField;
+  };
+};
