@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-xeditable by kunyan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-xeditable</h1>
+      <h2 class="project-tagline">X-Editable for React</h2>
+      <a href="https://github.com/kunyan/react-xeditable" class="btn">View on GitHub</a>
+      <a href="https://github.com/kunyan/react-xeditable/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/kunyan/react-xeditable/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-xeditable" class="anchor" href="#react-xeditable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>react-xeditable</h1>
+
+<p>X-Editable for React</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># npm</span>
+npm install kunyan/react-xeditable
+
+<span class="pl-c"># yarn</span>
+yarn add kunyan/react-xeditable</pre></div>
+
+<p>import bootstrap css and xeditable css</p>
+
+<pre><code>
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+
+&lt;link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/x-editable/bootstrap3-editable/css/bootstrap-editable.css"&gt;
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage:</h2>
+
+<h3>
+<a id="text" class="anchor" href="#text" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>text</h3>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">EditableTextField</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>username<span class="pl-pds">'</span></span> <span class="pl-e">value</span>=<span class="pl-s">{this.state.value}</span> <span class="pl-e">onUpdate</span>=<span class="pl-s">{this.handleUpdate}</span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">'</span>Please input your username<span class="pl-pds">'</span></span>/&gt;</pre></div>
+
+<h3>
+<a id="select" class="anchor" href="#select" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>select</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">options</span> <span class="pl-k">=</span> [
+  {
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>China<span class="pl-pds">'</span></span>,
+    value<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>CN<span class="pl-pds">'</span></span>
+  }, {
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>India<span class="pl-pds">'</span></span>,
+    value<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>IN<span class="pl-pds">'</span></span>
+  }, {
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>United Kingdom (UK)<span class="pl-pds">'</span></span>,
+    value<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>UK<span class="pl-pds">'</span></span>
+  }, {
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>United States of America (USA)<span class="pl-pds">'</span></span>,
+    value<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>USA<span class="pl-pds">'</span></span>
+  }
+];</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">EditableSelect</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>country<span class="pl-pds">'</span></span> <span class="pl-e">onUpdate</span>=<span class="pl-s">{this.handleUpdate}</span> <span class="pl-e">value</span>=<span class="pl-s">{this.state.value}</span> <span class="pl-e">options</span>=<span class="pl-s">{options}</span>/&gt;</pre></div>
+
+<h2>
+<a id="progress" class="anchor" href="#progress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Progress:</h2>
+
+<ul>
+<li>
+<g-emoji alias="ok_hand" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44c.png" ios-version="6.0">👌</g-emoji> : Supported</li>
+<li>
+<g-emoji alias="running_man" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3c3.png" ios-version="6.0">🏃</g-emoji> : In Progress</li>
+<li>
+<g-emoji alias="thought_balloon" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ad.png" ios-version="6.0">💭</g-emoji> : Planning</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Support</th>
+<th>ReactXElement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>textarea</td>
+<td><g-emoji alias="ok_hand" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44c.png" ios-version="6.0">👌</g-emoji></td>
+<td>EditableTextField</td>
+</tr>
+<tr>
+<td>select</td>
+<td><g-emoji alias="ok_hand" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44c.png" ios-version="6.0">👌</g-emoji></td>
+<td>EditableSelect</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td><g-emoji alias="running_man" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3c3.png" ios-version="6.0">🏃</g-emoji></td>
+<td>EditableSelect</td>
+</tr>
+<tr>
+<td>date</td>
+<td><g-emoji alias="thought_balloon" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ad.png" ios-version="6.0">💭</g-emoji></td>
+<td> </td>
+</tr>
+<tr>
+<td>datetime</td>
+<td><g-emoji alias="thought_balloon" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ad.png" ios-version="6.0">💭</g-emoji></td>
+<td> </td>
+</tr>
+<tr>
+<td>select2</td>
+<td><g-emoji alias="thought_balloon" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ad.png" ios-version="6.0">💭</g-emoji></td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="typescript" class="anchor" href="#typescript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TypeScript</h2>
+
+<p>Comming soon.</p>
+
+<h2>
+<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known Issues:</h2>
+
+<ol>
+<li>Only support inline mode</li>
+<li>onBlur not support yet</li>
+</ol>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Licensed under the GPL-3.0 license.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/kunyan/react-xeditable">React-xeditable</a> is maintained by <a href="https://github.com/kunyan">kunyan</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
