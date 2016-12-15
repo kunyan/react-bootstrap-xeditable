@@ -1,5 +1,4 @@
 const React = require('react');
-const ReactDOM = require('react-dom');
 
 const EditableTextArea = React.createClass({
   render() {

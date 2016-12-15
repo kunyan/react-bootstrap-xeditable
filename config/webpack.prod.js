@@ -7,25 +7,12 @@ const helpers = require('./helpers');
 const path = require('path');
 module.exports = webpackMerge(commonConfig, {
   entry: {
-    'app': helpers.root('test') + '/app.jsx',
+    'react-xeditable': helpers.root('src') + '/index.js',
   },
   output: {
     path: helpers.root('dist'),
-    publicPath: 'http://localhost:8080/',
     filename: '[name].js',
-    chunkFilename: '[id].chunk.js'
+    library: 'ReactXEditable',
+    libraryTarget: 'umd',
   },
-  plugins: [
-    new ExtractTextPlugin('[name].css'),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['demo', 'vendors'],
-    }),
-    new HtmlWebpackPlugin({
-      template: 'test/index.html',
-    }),
-  ],
-  devServer: {
-    historyApiFallback: true,
-    stats: 'minimal'
-  }
 });

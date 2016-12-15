@@ -1,31 +1,49 @@
 <!doctype html>
-<html class="no-js">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>React-xeditable Demo</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/bootstrap300/css/bootstrap.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/x-editable/bootstrap3-editable/css/bootstrap-editable.css">
+  <link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/demo-bs3.css">
   <!-- Place favicon.ico in the root directory -->
+  <style type="text/css">
+    body {
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
 
-  <!-- <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css"> -->
-  <script src="../node_modules/react/dist/react.js"></script>
-  <script src="../node_modules/react-dom/dist/react-dom.js"></script>
-
+    table.table>tbody>tr>td {
+      height: 30px;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="demo"></div>
-  <script src="main.js"></script>
+  <div style="width: 80%; margin: auto;">
+    <h1>React-xeditable Demo</h1>
+    <hr/>
+    <table id="user" class="table table-bordered table-striped" style="clear: both">
+      <tbody>
+        <tr>
+          <td width="35%">Simple text field</td>
+          <td width="65%" id='demo-textfield'></td>
+        </tr>
+        <tr>
+          <td width="35%">Select, local array, custom display</td>
+          <td width="65%" id='demo-select'></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 
 </html>

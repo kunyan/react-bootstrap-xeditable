@@ -7,11 +7,11 @@ import EditableForm from './EditableForm.jsx';
 export default class EditableSelect extends React.Component {
   static defaultProps = {
     name: null,
-  };
+  }
   static propTypes = {
     name: React.PropTypes.string.isRequired,
     onUpdate: React.PropTypes.func.isRequired
-  };
+  }
   constructor(props) {
     super(props);
     const text = this.props.options.map((option) => {
@@ -22,7 +22,7 @@ export default class EditableSelect extends React.Component {
       text: text,
     };
     this.setState = this.setState.bind(this);
-  };
+  }
   save = (event) => {
     event.preventDefault();
     const obj = this.refs.select;
@@ -31,16 +31,16 @@ export default class EditableSelect extends React.Component {
       isEditing: false,
       text: obj.options[obj.selectedIndex].text,
     });
-  };
+  }
   cancel = () => {
     this.setState({isEditing: false});
-  };
-  handleLinkClick = (event) => {
+  }
+  handleLinkClick = () => {
     this.setState({isEditing: true});
-  };
+  }
   render() {
     const options = this.props.options.map((option, index) => {
-        return <option key={index} value={option.value}>{option.text}</option>
+      return <option key={index} value={option.value}>{option.text}</option>;
     });
     if (this.state.isEditing) {
       return (
@@ -53,7 +53,7 @@ export default class EditableSelect extends React.Component {
                   <div className='editable-input' style={{
                     position: 'relative'
                   }}>
-                    <select ref='select' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value}>
+                    <select ref='select' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} >
                       {options}
                     </select>
                   </div>
@@ -66,7 +66,7 @@ export default class EditableSelect extends React.Component {
         </span>
       );
     } else {
-      return <EditableLink handler={this.handleLinkClick} text={this.state.text}/>
+      return <EditableLink handler={this.handleLinkClick} text={this.state.text}/>;
     }
-  };
-};
+  }
+}

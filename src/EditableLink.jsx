@@ -1,16 +1,12 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const EditableTextArea = require('./EditableTextArea.jsx');
+import React from 'react';
 
-const EditableLink = React.createClass({
-  handleClick(event) {
+export default class EditableLink extends React.Component {
+  handleClick() {
     this.setState({ isEditing: true });
-    console.log('click');
-  },
+  }
   render() {
     return (
       <a href='javascript:;' className='editable editable-click' onClick={this.props.handler} >{this.props.text}</a>
     );
   }
-});
-module.exports = EditableLink;
+}

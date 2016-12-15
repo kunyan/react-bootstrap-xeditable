@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd test && webpack-dev-server --inline --progress --port 9000"
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,13 @@
   },
   "homepage": "https://github.com/kunyan/react-xeditable#readme",
   "devDependencies": {
-    "babel-core": "^6.18.2",
+    "babel-core": "^6.20.0",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.9",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.18.0",
     "babel-plugin-transform-es3-member-expression-literals": "^6.8.0",
     "babel-plugin-transform-es3-property-literals": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.15.0",
@@ -28,11 +32,18 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
     "css-loader": "^0.26.1",
+    "eslint": "^3.12.2",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-react": "^6.8.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.24.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "rimraf": "^2.5.4",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^1.1.1"
   }
 }

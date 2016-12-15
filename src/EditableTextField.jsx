@@ -22,21 +22,21 @@ export default class EditableTextField extends React.Component {
       isEditing: false,
     };
     this.setState = this.setState.bind(this);
-  };
+  }
   save = (event) => {
     event.preventDefault();
     this.props.onUpdate(this.props.name, this.refs.input.value);
     this.setState({isEditing: false});
-  };
+  }
   cancel = () => {
     this.setState({isEditing: false});
-  };
+  }
   clear = () => {
     this.refs.input.value = '';
-  };
-  handleLinkClick = (event) => {
+  }
+  handleLinkClick = () => {
     this.setState({isEditing: true});
-  };
+  }
   render() {
     if (this.state.isEditing) {
       return (
@@ -49,8 +49,8 @@ export default class EditableTextField extends React.Component {
                   <div className='editable-input' style={{
                     position: 'relative'
                   }}>
-                    <input ref='input' type='text' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
-                    <span className='editable-clear-x' onClick={this.clear}></span>
+                    <input ref='input' type='text' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} autoFocus/>
+                    <span className='editable-clear-x' onClick={this.clear} ></span>
                   </div>
                   <EditableButtons save={this.save} cancel={this.cancel}/>
                 </div>
@@ -61,7 +61,7 @@ export default class EditableTextField extends React.Component {
         </span>
       );
     } else {
-      return <EditableLink handler={this.handleLinkClick} text={this.props.value}/>
+      return <EditableLink handler={this.handleLinkClick} text={this.props.value}/>;
     }
-  };
-};
+  }
+}
