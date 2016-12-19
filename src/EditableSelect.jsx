@@ -10,7 +10,8 @@ export default class EditableSelect extends React.Component {
   }
   static propTypes = {
     name: React.PropTypes.string.isRequired,
-    onUpdate: React.PropTypes.func.isRequired
+    onUpdate: React.PropTypes.func.isRequired,
+    options: React.PropTypes.array.isRequired,
   }
   constructor(props) {
     super(props);
