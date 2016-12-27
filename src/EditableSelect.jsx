@@ -1,8 +1,5 @@
 import React from 'react';
-import EditableLink from './EditableLink.jsx';
-import EditableLoading from './EditableLoading.jsx';
-import EditableButtons from './EditableButtons.jsx';
-import EditableForm from './EditableForm.jsx';
+import XEditable from './XEditable.jsx';
 
 export default class EditableSelect extends React.Component {
   static defaultProps = {
@@ -40,34 +37,19 @@ export default class EditableSelect extends React.Component {
     this.setState({isEditing: true});
   }
   render() {
-    const options = this.props.options.map((option, index) => {
-      return <option key={index} value={option.value}>{option.text}</option>;
-    });
     if (this.state.isEditing) {
+      const options = this.props.options.map((option, index) => {
+        return <option key={index} value={option.value}>{option.text}</option>;
+      });
       return (
-        <span className='editable-container editable-inline'>
-          <div>
-            {this.state.isLoading && (<EditableLoading/>)}
-            <EditableForm submit={this.save}>
-              <div className='control-group form-group'>
-                <div>
-                  <div className='editable-input' style={{
-                    position: 'relative'
-                  }}>
-                    <select ref='select' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} >
-                      {options}
-                    </select>
-                  </div>
-                  <EditableButtons save={this.save} cancel={this.cancel}/>
-                </div>
-                <div className='editable-error-block help-block'></div>
-              </div>
-            </EditableForm>
-          </div>
-        </span>
+        <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
+          <select ref='select' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} >
+            {options}
+          </select>
+        </XEditable>
       );
     } else {
-      return <EditableLink handler={this.handleLinkClick} text={this.state.text}/>;
+      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick} >{this.state.text}</a>;
     }
   }
 }

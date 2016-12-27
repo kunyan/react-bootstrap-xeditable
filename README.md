@@ -50,15 +50,15 @@ const options = [
 ```
 
 ## Progress:
-* :ok_hand: : Supported
+* :white_check_mark: : Supported
 * :runner: : In Progress
 * :thought_balloon: : Planning
 
 | Element | Support | ReactXElement |
 | ------| ------ | ------ |
-| textarea| :ok_hand: | EditableTextField |
-| select| :ok_hand: | EditableSelect |
-| textarea| :runner: | EditableSelect |
+| textfield| :white_check_mark: | EditableTextField |
+| select| :white_check_mark: | EditableSelect |
+| textarea| :white_check_mark: | EditableTextArea |
 | date| :thought_balloon: |  &nbsp; |
 | datetime| :thought_balloon: | &nbsp; |
 | select2| :thought_balloon: | &nbsp; |

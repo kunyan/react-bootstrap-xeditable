@@ -12,4 +12,3 @@ export interface EditableSelectProps extends React.Props<EditableTextFieldClass>
 export interface EditableSelect extends React.ReactElement<EditableSelectProps> { }
 export interface EditableSelectClass extends  React.ComponentClass<EditableSelectProps> { }
 export const EditableSelect: EditableSelectClass;
-export default EditableSelect;
