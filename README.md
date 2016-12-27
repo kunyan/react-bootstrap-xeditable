@@ -1,15 +1,15 @@
 # react-xeditable
 
-X-Editable for React
+X-Editable for React with Bootstrap
 
 ## Install
 
 ```bash
 # npm
-npm install kunyan/react-xeditable
+npm install kunyan/react-bootstrap-xeditable
 
 # yarn
-yarn add kunyan/react-xeditable
+yarn add kunyan/react-bootstrap-xeditable
 ```
 
 import bootstrap css and xeditable css

@@ -1,6 +1,6 @@
 {
-  "name": "react-xeditable",
-  "version": "1.0.0",
+  "name": "react-bootstrap-xeditable",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "typings": "./d.ts/index.d.ts",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kunyan/react-xeditable.git"
+    "url": "git+https://github.com/kunyan/react-bootstrap-xeditable.git"
   },
   "author": "Kun Yan <kyan@redhat.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/kunyan/react-xeditable/issues"
+    "url": "https://github.com/kunyan/react-bootstrap-xeditable/issues"
   },
-  "homepage": "https://github.com/kunyan/react-xeditable#readme",
+  "homepage": "https://github.com/kunyan/react-bootstrap-xeditable#readme",
   "devDependencies": {
     "babel-core": "^6.20.0",
     "babel-eslint": "^7.1.1",
