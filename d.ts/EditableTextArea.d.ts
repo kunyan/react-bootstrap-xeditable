@@ -3,7 +3,7 @@ import React from 'react';
 
 // <EditableTextArea />
 // ----------------------------------------
-export interface EditableTextAreaProps extends React.Props<EditableTextFieldClass> {
+export interface EditableTextAreaProps extends React.Props<EditableTextAreaClass> {
   name: string;
   value?: string;
   placeholder?: string;

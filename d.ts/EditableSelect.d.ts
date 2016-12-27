@@ -3,7 +3,7 @@ import React from 'react';
 
 // <EditableSelect />
 // ----------------------------------------
-export interface EditableSelectProps extends React.Props<EditableTextFieldClass> {
+export interface EditableSelectProps extends React.Props<EditableSelectClass> {
   name: string;
   value?: string;
   options: Array<any>;

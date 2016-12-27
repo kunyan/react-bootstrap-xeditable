@@ -12,4 +12,3 @@ export interface EditableTextFieldProps extends React.Props<EditableTextFieldCla
 export interface EditableTextField extends React.ReactElement<EditableTextFieldProps> { }
 export interface EditableTextFieldClass extends  React.ComponentClass<EditableTextFieldProps> { }
 export const EditableTextField: EditableTextFieldClass;
-export default EditableTextField;
