@@ -7,12 +7,12 @@ const helpers = require('./helpers');
 const path = require('path');
 module.exports = webpackMerge(commonConfig, {
   entry: {
-    'react-xeditable': helpers.root('src') + '/index.js',
+    'react-bootstrap-xeditable': helpers.root('src') + '/index.js',
   },
   output: {
     path: helpers.root('dist'),
     filename: '[name].js',
-    library: 'ReactXEditable',
+    library: 'ReactBootstrapXEditable',
     libraryTarget: 'umd',
   },
 });
