@@ -22,7 +22,7 @@ import bootstrap css and xeditable css
 
 ## Usage:
 
-### text
+### textfield
 ```html
 <EditableTextField name='username' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your username'/>
 ```
@@ -63,7 +63,7 @@ const options = [
 | datetime| :thought_balloon: | &nbsp; |
 | select2| :thought_balloon: | &nbsp; |
 
-## TypeScript
+## TypeScript:
 Comming soon.
 
 ## Known Issues:
@@ -74,3 +74,4 @@ Comming soon.
 
 ## License
 Licensed under the GPL-3.0 license.
+Copyright (C) 2016 Kun Yan
