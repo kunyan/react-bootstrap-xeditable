@@ -1,10 +1,6 @@
 const webpack = require('webpack');
 module.exports = {
   entry: {
-    'vendors': [
-      'react',
-      'react-dom'
-    ],
     'react-bootstrap-xeditable': './src/index.js',
   },
   devtool: 'source-map',

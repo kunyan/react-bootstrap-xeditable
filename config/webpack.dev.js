@@ -18,7 +18,7 @@ module.exports = webpackMerge(commonConfig, {
   plugins: [
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['demo', 'vendors'],
+      name: ['demo'],
     }),
     new HtmlWebpackPlugin({
       template: 'test/index.html',

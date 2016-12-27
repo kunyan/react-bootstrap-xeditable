@@ -1,13 +1,25 @@
 {
   "name": "react-bootstrap-xeditable",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "typings": "d.ts/index.d.ts",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build:commonjs": "rimraf lib && cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "rimraf es && cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:umd": "rimraf dist && cross-env BABEL_ENV=commonjs webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build": "npm run build:commonjs && npm run build:es && npm run build:umd "
   },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src",
+    "d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kunyan/react-bootstrap-xeditable.git"
