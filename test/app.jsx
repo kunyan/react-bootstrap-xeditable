@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {EditableTextField, EditableSelect, EditableTextArea} from '../index';
+import {EditableTextField, EditableSelect, EditableTextArea} from '../src/index';
 
 const XTextField = class XTextField extends React.Component {
   constructor(props) {
@@ -30,22 +30,29 @@ const XSelect = class XSelect extends React.Component {
     this.setState({value: value});
   }
   render() {
-    const options = [
-      {
-        text: 'China',
-        value: 'CN'
-      }, {
-        text: 'India',
-        value: 'IN'
-      }, {
-        text: 'United Kingdom (UK)',
-        value: 'UK'
-      }, {
-        text: 'United States of America (USA)',
-        value: 'USA'
-      }
+    // const options = [
+    //   {
+    //     text: 'China',
+    //     value: 'CN'
+    //   }, {
+    //     text: 'India',
+    //     value: 'IN'
+    //   }, {
+    //     text: 'United Kingdom (UK)',
+    //     value: 'UK'
+    //   }, {
+    //     text: 'United States of America (USA)',
+    //     value: 'USA'
+    //   }
+    // ];
+    const options2 = [
+      'Hello',
+      'World',
+      'Sky',
+      'Air',
+      // 'UK',
     ];
-    return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options}/>);
+    return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options2} defaultOptionText='Not select'/>);
   }
 };
 
