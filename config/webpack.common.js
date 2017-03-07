@@ -4,23 +4,19 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js', 'jsx']
+    extensions: ['.js', 'jsx']
   },
   module: {
-    loaders: [{
-      test: /\.js(x)?$/,
+    rules: [{
+      enforce: 'pre',
+      test: /\.jsx?$/,
+      loaders: ['eslint-loader', 'source-map-loader'],
       exclude: /(node_modules)/,
-      loader: 'babel-loader',
-    }],
-    preLoaders: [{
-      test: /\.js$/,
-      loader: 'source-map-loader'
     },
     {
-      test: /\.js(x)?$/,
-      exclude: /node_modules/,
-      loader: 'eslint-loader'
-    },
-    ]
+      test: /\.jsx?$/,
+      loader: 'babel-loader',
+      exclude: /(node_modules)/
+    }]
   }
 };

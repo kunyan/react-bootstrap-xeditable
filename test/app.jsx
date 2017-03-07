@@ -12,6 +12,7 @@ const XTextField = class XTextField extends React.Component {
   }
   handleUpdate = (name, value) => {
     this.setState({value: value});
+    alert('Value Changed:' + value);
   }
   render() {
     return (<EditableTextField name='test' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your name'/>);
@@ -28,6 +29,7 @@ const XSelect = class XSelect extends React.Component {
   }
   handleUpdate = (name, value) => {
     this.setState({value: value});
+    alert('Value Changed:' + value);
   }
   render() {
     // const options = [
