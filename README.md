@@ -1,6 +1,9 @@
-# react-xeditable
+# react-bootstrap-xeditable
 
 X-Editable for React with Bootstrap
+
+[![npm version](https://badge.fury.io/js/react-bootstrap-xeditable.svg)](https://badge.fury.io/js/react-bootstrap-xeditable)
+[![devDependencies Status](https://david-dm.org/kunyan/react-bootstrap-xeditable/dev-status.svg)](https://david-dm.org/kunyan/react-bootstrap-xeditable?type=dev)
 
 ## Install
 
@@ -22,12 +25,12 @@ import bootstrap css and xeditable css
 
 ## Usage:
 
-### textfield
+### TextField
 ```html
 <EditableTextField name='username' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your username'/>
 ```
 
-### select
+### Select
 ```javascript
 const options = [
   {
