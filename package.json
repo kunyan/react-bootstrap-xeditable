@@ -12,7 +12,7 @@
     "build:es": "./node_modules/.bin/rimraf es && ./node_modules/.bin/cross-env BABEL_ENV=es ./node_modules/.bin/babel src --out-dir es",
     "build:umd": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/cross-env BABEL_ENV=commonjs ./node_modules/.bin/webpack --config config/webpack.prod.js --progress --profile --bail",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd",
-    "test": "ava -v"
+    "test": "./node_modules/.bin/ava -v"
   },
   "files": [
     "dist",
