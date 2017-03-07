@@ -6,11 +6,10 @@ const commonConfig = require('./webpack.common.js');
 const helpers = require('./helpers');
 module.exports = webpackMerge(commonConfig, {
   entry: {
-    'app': helpers.root('test') + '/app.jsx',
+    'app': helpers.root('example') + '/app.jsx',
   },
   output: {
     path: helpers.root('dist'),
-    publicPath: 'http://localhost:8080/',
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   },
@@ -20,7 +19,7 @@ module.exports = webpackMerge(commonConfig, {
       name: ['demo'],
     }),
     new HtmlWebpackPlugin({
-      template: 'test/index.html',
+      template: 'example/index.html',
     }),
   ],
   devServer: {

@@ -6,7 +6,8 @@
 * Fork the repository on GitHub
 * Checkout a new branch
 * Modify the code in `src` and `d.ts`
-* Verify your changes with the code in `test` dir
+* Add unit test in `test`
+* Verify your changes with the code in `example` dir
 
 ```shell
 # start dev server
@@ -19,4 +20,5 @@ npm run start
 ```shell
 npm run build
 ```
+* Add a release on GitHub
 * [Publishing npm packages](https://docs.npmjs.com/getting-started/publishing-npm-packages)
