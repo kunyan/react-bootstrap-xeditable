@@ -4,7 +4,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common.js');
 const helpers = require('./helpers');
-const path = require('path');
 module.exports = webpackMerge(commonConfig, {
   entry: {
     'app': helpers.root('test') + '/app.jsx',

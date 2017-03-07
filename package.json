@@ -1,16 +1,16 @@
 {
   "name": "react-bootstrap-xeditable",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "typings": "d.ts/index.d.ts",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8080",
-    "build:commonjs": "rimraf lib && cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:es": "rimraf es && cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:umd": "rimraf dist && cross-env BABEL_ENV=commonjs webpack --config config/webpack.prod.js --progress --profile --bail",
+    "start": "./node_modules/.bin/webpack-dev-server --inline --progress --port 8080",
+    "build:commonjs": "./node_modules/.bin/rimraf lib && ./node_modules/.bin/cross-env BABEL_ENV=commonjs ./node_modules/.bin/babel src --out-dir lib",
+    "build:es": "./node_modules/.bin/rimraf es && ./node_modules/.bin/cross-env BABEL_ENV=es ./node_modules/.bin/babel src --out-dir es",
+    "build:umd": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/cross-env BABEL_ENV=commonjs ./node_modules/.bin/webpack --config config/webpack.prod.js --progress --profile --bail",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd "
   },
   "files": [
@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/kunyan/react-bootstrap-xeditable#readme",
   "devDependencies": {
+    "babel-cli": "^6.23.0",
     "babel-core": "^6.20.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.9",
@@ -44,6 +45,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
+    "cross-env": "^3.2.3",
     "css-loader": "^0.26.1",
     "eslint": "^3.12.2",
     "eslint-loader": "^1.6.1",

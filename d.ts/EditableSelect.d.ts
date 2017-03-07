@@ -8,7 +8,8 @@ export interface EditableSelectProps extends React.Props<EditableSelectClass> {
   value?: string;
   options: Array<any>;
   onUpdate: Function;
+  defaultOptionText?: string;
 }
 export interface EditableSelect extends React.ReactElement<EditableSelectProps> { }
-export interface EditableSelectClass extends  React.ComponentClass<EditableSelectProps> { }
+export interface EditableSelectClass extends React.ComponentClass<EditableSelectProps> { }
 export const EditableSelect: EditableSelectClass;

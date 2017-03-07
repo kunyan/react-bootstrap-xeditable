@@ -46,10 +46,7 @@ const XSelect = class XSelect extends React.Component {
     //   }
     // ];
     const options2 = [
-      'Hello',
-      'World',
-      'Sky',
-      'Air',
+      'Hello', 'World', 'Sky', 'Air',
       // 'UK',
     ];
     return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options2} defaultOptionText='Not select'/>);
@@ -71,6 +68,9 @@ const XTextArea = class XTextArea extends React.Component {
     return (<EditableTextArea name='test' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your name'/>);
   }
 };
-ReactDOM.render(<XTextField/>, document.getElementById('demo-textfield'));
-ReactDOM.render(<XSelect/>, document.getElementById('demo-select'));
-ReactDOM.render(<XTextArea/>, document.getElementById('demo-textarea'));
+ReactDOM.render(
+  <XTextField/>, document.getElementById('demo-textfield'));
+ReactDOM.render(
+  <XSelect/>, document.getElementById('demo-select'));
+ReactDOM.render(
+  <XTextArea/>, document.getElementById('demo-textarea'));

@@ -16,7 +16,7 @@ export default class EditableTextField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditing: false,
+      isEditing: false
     };
     this.setState = this.setState.bind(this);
   }
@@ -38,12 +38,12 @@ export default class EditableTextField extends React.Component {
     if (this.state.isEditing) {
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-            <input ref='el' type='text' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} autoFocus/>
-            <span className='editable-clear-x' onClick={this.clear} ></span>
+          <input ref='el' type='text' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} autoFocus/>
+          <span className='editable-clear-x' onClick={this.clear}></span>
         </XEditable>
       );
     } else {
-      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick} >{this.props.value}</a>;
+      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick}>{this.props.value}</a>;
     }
   }
 }

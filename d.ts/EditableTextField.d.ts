@@ -10,5 +10,5 @@ export interface EditableTextFieldProps extends React.Props<EditableTextFieldCla
   onUpdate: Function;
 }
 export interface EditableTextField extends React.ReactElement<EditableTextFieldProps> { }
-export interface EditableTextFieldClass extends  React.ComponentClass<EditableTextFieldProps> { }
+export interface EditableTextFieldClass extends React.ComponentClass<EditableTextFieldProps> { }
 export const EditableTextField: EditableTextFieldClass;

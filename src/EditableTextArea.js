@@ -16,7 +16,7 @@ export default class EditableTextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditing: false,
+      isEditing: false
     };
     this.setState = this.setState.bind(this);
   }
@@ -38,11 +38,13 @@ export default class EditableTextArea extends React.Component {
     if (this.state.isEditing) {
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-            <textarea ref='el' className='form-control' rows='3' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
+          <textarea ref='el' className='form-control' rows='3' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
         </XEditable>
       );
     } else {
-      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick} ><pre>{this.props.value}</pre></a>;
+      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick}>
+        <pre>{this.props.value}</pre>
+      </a>;
     }
   }
 }
