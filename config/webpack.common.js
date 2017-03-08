@@ -2,7 +2,6 @@ module.exports = {
   entry: {
     'react-bootstrap-xeditable': './src/index.js',
   },
-  devtool: 'source-map',
   resolve: {
     extensions: ['.js', 'jsx']
   },
