@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>React-xeditable Demo</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/bootstrap300/css/bootstrap.css">
+
+  <link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/x-editable/bootstrap3-editable/css/bootstrap-editable.css">
+  <link rel="stylesheet" href="https://vitalets.github.io/x-editable/assets/demo-bs3.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+  <script src="dist/react-bootstrap-xeditable.min.js"></script>
+
+  <!-- Place favicon.ico in the root directory -->
+  <style type="text/css">
+    body {
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
+
+    table.table>tbody>tr>td {
+      height: 30px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="width: 80%; margin: auto;">
+    <h1>React-xeditable Demo</h1>
+    <hr/>
+    <table id="user" class="table table-bordered table-striped" style="clear: both">
+      <tbody>
+        <tr>
+          <td width="35%">Simple text field</td>
+          <td width="65%" id='demo-textfield'></td>
+        </tr>
+        <tr>
+          <td width="35%">Select, local array</td>
+          <td width="65%" id='demo-select'></td>
+        </tr>
+        <tr>
+          <td width="35%">Select, local array, custom display</td>
+          <td width="65%" id='demo-select-custom'></td>
+        </tr>
+        <tr>
+          <td width="35%">Textarea</td>
+          <td width="65%" id='demo-textarea'></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script type="text/babel">
+  const XTextField = class XTextField extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: 'superuser'
+      };
+      this.setState = this.setState.bind(this);
+    }
+    handleUpdate = (name, value) => {
+      this.setState({value: value});
+      alert('Value Changed:' + value);
+    }
+    render() {
+      return (<EditableTextField name='test' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your name'/>);
+    }
+  };
+
+  const XSelect = class XSelect extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: null,
+      };
+      this.setState = this.setState.bind(this);
+    }
+    handleUpdate = (name, value) => {
+      this.setState({value: value});
+      alert('Value Changed:' + value);
+    }
+    render() {
+      const options2 = [
+        'Hello', 'World', 'Sky', 'Air',
+        // 'UK',
+      ];
+      return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options2}/>);
+    }
+  };
+
+  const XSelect2 = class XSelect extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: null,
+      };
+      this.setState = this.setState.bind(this);
+    }
+    handleUpdate = (name, value) => {
+      this.setState({value: value});
+      alert('Value Changed:' + value);
+    }
+    render() {
+      const options = [
+        {
+          text: 'China',
+          value: 'CN'
+        }, {
+          text: 'India',
+          value: 'IN'
+        }, {
+          text: 'United Kingdom (UK)',
+          value: 'UK'
+        }, {
+          text: 'United States of America (USA)',
+          value: 'USA'
+        }
+      ];
+      const defaultText = <span className="glyphicon glyphicon-pencil"/>;
+      return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options} defaultText={defaultText}/>);
+    }
+  };
+
+  const XTextArea = class XTextArea extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: 'Act as if you are and you will draw it to you.\nWhat you act as if you are, you become.\nIn other words, FAKE it till you MAKE IT, but not actually faking, doing it sincerely.'
+      };
+      this.setState = this.setState.bind(this);
+    }
+    handleUpdate = (name, value) => {
+      this.setState({value: value});
+    }
+    render() {
+      return (<EditableTextArea name='test' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your name'/>);
+    }
+  };
+  ReactDOM.render(
+    <XTextField/>, document.getElementById('demo-textfield'));
+  ReactDOM.render(
+    <XSelect/>, document.getElementById('demo-select'));
+  ReactDOM.render(
+    <XSelect2/>, document.getElementById('demo-select-custom'));
+  ReactDOM.render(
+    <XTextArea/>, document.getElementById('demo-textarea'));
+
+    </script>
+</body>
+
+</html>
