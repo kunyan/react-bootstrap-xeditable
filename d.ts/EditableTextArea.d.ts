@@ -4,10 +4,15 @@ import React from 'react';
 // <EditableTextArea />
 // ----------------------------------------
 export interface EditableTextAreaProps extends React.Props<EditableTextAreaClass> {
-  name: string;
+  id?: string;
+  name?: string;
   value?: string;
+  className?: string;
+  rows: number,
+  cols: number,
   placeholder?: string;
   onUpdate: Function;
+  defaultText?: any;
 }
 export interface EditableTextArea extends React.ReactElement<EditableTextAreaProps> { }
 export interface EditableTextAreaClass extends React.ComponentClass<EditableTextAreaProps> { }

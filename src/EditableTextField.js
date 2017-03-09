@@ -2,28 +2,28 @@ import React from 'react';
 import XEditable from './XEditable';
 
 export default class EditableTextField extends React.Component {
-  static defaultProps = {
-    name: null,
-    value: '',
-    placeholder: ''
-  };
   static propTypes = {
-    name: React.PropTypes.string.isRequired,
-    value: React.PropTypes.string,
+    id: React.PropTypes.string,
+    name: React.PropTypes.string,
+    className: React.PropTypes.string,
+    value: React.PropTypes.node,
     placeholder: React.PropTypes.string,
-    onUpdate: React.PropTypes.func.isRequired
+    onUpdate: React.PropTypes.func.isRequired,
+    defaultText: React.PropTypes.node,
   };
   constructor(props) {
     super(props);
     this.state = {
-      isEditing: false
+      isEditing: false,
+      value: this.props.value,
+      defaultText: this.props.defaultText || 'Empty',
     };
     this.setState = this.setState.bind(this);
   }
   save = (event) => {
     event.preventDefault();
     this.props.onUpdate(this.props.name, this.refs.el.value);
-    this.setState({isEditing: false});
+    this.setState({isEditing: false, value: this.refs.el.value});
   }
   cancel = () => {
     this.setState({isEditing: false});
@@ -36,14 +36,19 @@ export default class EditableTextField extends React.Component {
   }
   render() {
     if (this.state.isEditing) {
+      const inputClassName = `form-control input-sm ${this.props.className}`;
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-          <input ref='el' type='text' className='form-control input-sm' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} autoFocus/>
+          <input ref='el' id={this.props.id} type='text' className={inputClassName} name={this.props.name} defaultValue={this.state.value} placeholder={this.props.placeholder} autoFocus/>
           <span className='editable-clear-x' onClick={this.clear}></span>
         </XEditable>
       );
     } else {
-      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick}>{this.props.value}</a>;
+      let aClassName = 'editable editable-click';
+      if (!this.props.value) {
+        aClassName += ' editable-empty';
+      }
+      return <a href='javascript:;' className={aClassName} style={this.state.textStyle} onClick={this.handleLinkClick}>{this.state.value || this.state.defaultText}</a>;
     }
   }
 }

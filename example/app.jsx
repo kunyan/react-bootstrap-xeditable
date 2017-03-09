@@ -23,7 +23,7 @@ const XSelect = class XSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'UK'
+      value: null,
     };
     this.setState = this.setState.bind(this);
   }
@@ -32,26 +32,44 @@ const XSelect = class XSelect extends React.Component {
     alert('Value Changed:' + value);
   }
   render() {
-    // const options = [
-    //   {
-    //     text: 'China',
-    //     value: 'CN'
-    //   }, {
-    //     text: 'India',
-    //     value: 'IN'
-    //   }, {
-    //     text: 'United Kingdom (UK)',
-    //     value: 'UK'
-    //   }, {
-    //     text: 'United States of America (USA)',
-    //     value: 'USA'
-    //   }
-    // ];
     const options2 = [
       'Hello', 'World', 'Sky', 'Air',
       // 'UK',
     ];
-    return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options2} defaultOptionText='Not select'/>);
+    return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options2}/>);
+  }
+};
+
+const XSelect2 = class XSelect extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+    this.setState = this.setState.bind(this);
+  }
+  handleUpdate = (name, value) => {
+    this.setState({value: value});
+    alert('Value Changed:' + value);
+  }
+  render() {
+    const options = [
+      {
+        text: 'China',
+        value: 'CN'
+      }, {
+        text: 'India',
+        value: 'IN'
+      }, {
+        text: 'United Kingdom (UK)',
+        value: 'UK'
+      }, {
+        text: 'United States of America (USA)',
+        value: 'USA'
+      }
+    ];
+    const defaultText = <span className="glyphicon glyphicon-pencil"/>;
+    return (<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options} defaultText={defaultText}/>);
   }
 };
 
@@ -74,5 +92,7 @@ ReactDOM.render(
   <XTextField/>, document.getElementById('demo-textfield'));
 ReactDOM.render(
   <XSelect/>, document.getElementById('demo-select'));
+ReactDOM.render(
+  <XSelect2/>, document.getElementById('demo-select-custom'));
 ReactDOM.render(
   <XTextArea/>, document.getElementById('demo-textarea'));

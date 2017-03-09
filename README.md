@@ -68,7 +68,7 @@ const options = [
 | select2| :thought_balloon: | &nbsp; |
 
 ## TypeScript:
-Comming soon.
+d.ts already intergrated. just import it.
 
 ## Known Issues:
 

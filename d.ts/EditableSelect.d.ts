@@ -4,11 +4,13 @@ import React from 'react';
 // <EditableSelect />
 // ----------------------------------------
 export interface EditableSelectProps extends React.Props<EditableSelectClass> {
-  name: string;
+  id?: string;
+  name?: string;
   value?: string;
-  options: Array<any>;
+  className?: string;
+  options?: Array<any>;
   onUpdate: Function;
-  defaultOptionText?: string;
+  defaultText?: any;
 }
 export interface EditableSelect extends React.ReactElement<EditableSelectProps> { }
 export interface EditableSelectClass extends React.ComponentClass<EditableSelectProps> { }

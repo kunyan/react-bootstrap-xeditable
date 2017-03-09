@@ -2,28 +2,30 @@ import React from 'react';
 import XEditable from './XEditable';
 
 export default class EditableTextArea extends React.Component {
-  static defaultProps = {
-    name: null,
-    value: '',
-    placeholder: ''
-  };
   static propTypes = {
-    name: React.PropTypes.string.isRequired,
-    value: React.PropTypes.string,
+    id: React.PropTypes.string,
+    name: React.PropTypes.string,
+    className: React.PropTypes.string,
+    value: React.PropTypes.node,
+    rows: React.PropTypes.number,
+    cols: React.PropTypes.number,
     placeholder: React.PropTypes.string,
-    onUpdate: React.PropTypes.func.isRequired
+    onUpdate: React.PropTypes.func.isRequired,
+    defaultText: React.PropTypes.node
   };
   constructor(props) {
     super(props);
     this.state = {
-      isEditing: false
+      isEditing: false,
+      value: this.props.value,
+      defaultText: this.props.defaultText || 'Empty',
     };
     this.setState = this.setState.bind(this);
   }
   save = (event) => {
     event.preventDefault();
     this.props.onUpdate(this.props.name, this.refs.el.value);
-    this.setState({isEditing: false});
+    this.setState({isEditing: false, value: this.refs.el.value});
   }
   cancel = () => {
     this.setState({isEditing: false});
@@ -36,14 +38,21 @@ export default class EditableTextArea extends React.Component {
   }
   render() {
     if (this.state.isEditing) {
+      const textareaClassName = `form-control ${this.props.className}`;
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-          <textarea ref='el' className='form-control' rows='3' name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
+          <textarea ref='el' id={this.props.id} className={textareaClassName} rows={this.props.rows} cols={this.props.cols} name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
         </XEditable>
       );
     } else {
-      return <a href='javascript:;' className='editable editable-click' onClick={this.handleLinkClick}>
-        <pre>{this.props.value}</pre>
+      let aClassName = 'editable editable-click';
+      let content = <pre>{this.state.value}</pre>;
+      if (!this.state.value) {
+        aClassName += ' editable-empty';
+        content = this.state.defaultText;
+      }
+      return <a href='javascript:;' className={aClassName} style={this.state.textStyle} onClick={this.handleLinkClick}>
+        {content}
       </a>;
     }
   }
