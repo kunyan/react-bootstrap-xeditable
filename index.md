@@ -1,15 +1,19 @@
-# react-xeditable
+# react-bootstrap-xeditable
 
-X-Editable for React
+X-Editable for React with Bootstrap
+
+[![Build Status](https://travis-ci.org/kunyan/react-bootstrap-xeditable.svg?branch=master)](https://travis-ci.org/kunyan/react-bootstrap-xeditable)
+[![npm version](https://badge.fury.io/js/react-bootstrap-xeditable.svg)](https://badge.fury.io/js/react-bootstrap-xeditable)
+[![devDependencies Status](https://david-dm.org/kunyan/react-bootstrap-xeditable/dev-status.svg)](https://david-dm.org/kunyan/react-bootstrap-xeditable?type=dev)
 
 ## Install
 
 ```bash
 # npm
-npm install kunyan/react-xeditable
+npm install react-bootstrap-xeditable
 
 # yarn
-yarn add kunyan/react-xeditable
+yarn add react-bootstrap-xeditable
 ```
 
 import bootstrap css and xeditable css
@@ -22,12 +26,12 @@ import bootstrap css and xeditable css
 
 ## Usage:
 
-### text
+### TextField
 ```html
 <EditableTextField name='username' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your username'/>
 ```
 
-### select
+### Select
 ```javascript
 const options = [
   {
@@ -50,21 +54,21 @@ const options = [
 ```
 
 ## Progress:
-* :ok_hand: : Supported
+* :white_check_mark: : Supported
 * :runner: : In Progress
 * :thought_balloon: : Planning
 
 | Element | Support | ReactXElement |
 | ------| ------ | ------ |
-| textarea| :ok_hand: | EditableTextField |
-| select| :ok_hand: | EditableSelect |
-| textarea| :runner: | EditableSelect |
+| textfield| :white_check_mark: | EditableTextField |
+| select| :white_check_mark: | EditableSelect |
+| textarea| :white_check_mark: | EditableTextArea |
 | date| :thought_balloon: |  &nbsp; |
 | datetime| :thought_balloon: | &nbsp; |
 | select2| :thought_balloon: | &nbsp; |
 
-## TypeScript
-Comming soon.
+## TypeScript:
+d.ts already intergrated. just import it.
 
 ## Known Issues:
 
@@ -74,3 +78,4 @@ Comming soon.
 
 ## License
 Licensed under the GPL-3.0 license.
+Copyright (C) 2016 Kun Yan
