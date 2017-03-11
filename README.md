@@ -1,6 +1,6 @@
 # react-bootstrap-xeditable
 
-X-Editable for React with Bootstrap
+X-Editable for React with Bootstrap.  [Demo](http://codepen.io/kyan/full/mWmPzp/)
 
 [![Build Status](https://travis-ci.org/kunyan/react-bootstrap-xeditable.svg?branch=master)](https://travis-ci.org/kunyan/react-bootstrap-xeditable)
 [![npm version](https://badge.fury.io/js/react-bootstrap-xeditable.svg)](https://badge.fury.io/js/react-bootstrap-xeditable)
