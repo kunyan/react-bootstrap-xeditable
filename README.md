@@ -28,6 +28,8 @@ import bootstrap css and xeditable css
 
 ### TextField
 ```html
+import {EditableTextField} from 'react-bootstrap-xeditable';
+
 <EditableTextField name='username' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your username'/>
 ```
 
@@ -50,6 +52,8 @@ const options = [
 ];
 ```
 ```html
+import {EditableSelect} from 'react-bootstrap-xeditable';
+
 <EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options}/>
 ```
 
