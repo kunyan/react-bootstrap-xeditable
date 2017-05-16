@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import XEditable from './XEditable';
 
 export default class EditableSelect extends React.Component {
   static propTypes = {
-    id: React.PropTypes.string,
-    name: React.PropTypes.string,
-    className: React.PropTypes.string,
-    value: React.PropTypes.node,
-    onUpdate: React.PropTypes.func.isRequired,
-    options: React.PropTypes.array,
-    defaultText: React.PropTypes.node,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    className: PropTypes.string,
+    value: PropTypes.node,
+    onUpdate: PropTypes.func.isRequired,
+    options: PropTypes.array,
+    defaultText: PropTypes.node,
   }
 
   constructor(props) {

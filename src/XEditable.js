@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class XEditable extends React.Component {
   static defaultProps = {
     isLoading: false
   };
   static propTypes = {
-    isLoading: React.PropTypes.bool
+    isLoading: PropTypes.bool
   };
 
   constructor(props) {

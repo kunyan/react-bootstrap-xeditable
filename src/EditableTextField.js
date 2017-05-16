@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import XEditable from './XEditable';
 
 export default class EditableTextField extends React.Component {
   static propTypes = {
-    id: React.PropTypes.string,
-    name: React.PropTypes.string,
-    className: React.PropTypes.string,
-    value: React.PropTypes.node,
-    placeholder: React.PropTypes.string,
-    onUpdate: React.PropTypes.func.isRequired,
-    defaultText: React.PropTypes.node,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    className: PropTypes.string,
+    value: PropTypes.node,
+    placeholder: PropTypes.string,
+    onUpdate: PropTypes.func.isRequired,
+    defaultText: PropTypes.node,
   };
   constructor(props) {
     super(props);
