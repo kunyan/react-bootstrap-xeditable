@@ -50,7 +50,7 @@ export default class EditableTextArea extends React.Component {
       let content = <pre>{this.state.value}</pre>;
       if (!this.state.value) {
         aClassName += ' editable-empty';
-        content = this.state.defaultText;
+        content = this.state.value || this.state.defaultText;
       }
       return <a href='javascript:;' className={aClassName} style={this.state.textStyle} onClick={this.handleLinkClick}>
         {content}
