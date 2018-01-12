@@ -35,12 +35,15 @@ export default class EditableTextField extends React.Component {
   handleLinkClick = () => {
     this.setState({isEditing: true});
   }
+  handleInputBlur = () => {
+    this.cancel();
+  }
   render() {
     if (this.state.isEditing) {
       const inputClassName = `form-control input-sm ${this.props.className}`;
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-          <input ref='el' id={this.props.id} type='text' className={inputClassName} name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} autoFocus/>
+          <input ref='el' id={this.props.id} type='text' className={inputClassName} name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} onBlur={this.handleInputBlur} autoFocus/>
           <span className='editable-clear-x' onClick={this.clear}></span>
         </XEditable>
       );

@@ -37,12 +37,15 @@ export default class EditableTextArea extends React.Component {
   handleLinkClick = () => {
     this.setState({isEditing: true});
   }
+  handleInputBlur = () => {
+    this.cancel();
+  }
   render() {
     if (this.state.isEditing) {
       const textareaClassName = `form-control ${this.props.className}`;
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-          <textarea ref='el' id={this.props.id} className={textareaClassName} rows={this.props.rows} cols={this.props.cols} name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder}/>
+          <textarea ref='el' id={this.props.id} className={textareaClassName} rows={this.props.rows} cols={this.props.cols} name={this.props.name} defaultValue={this.props.value} placeholder={this.props.placeholder} onBlur={this.handleInputBlur} autoFocus/>
         </XEditable>
       );
     } else {
