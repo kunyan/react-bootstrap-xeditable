@@ -63,6 +63,7 @@ import {EditableSelect} from 'react-bootstrap-xeditable';
 <EditableSelect
   name='country'
   onUpdate={this.handleUpdate}  # Required
+  onBlur={this.handleBlur}
   value={this.state.value}
   options={options}
 />
