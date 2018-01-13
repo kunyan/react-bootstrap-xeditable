@@ -44,12 +44,15 @@ export default class EditableSelect extends React.Component {
     });
     this.setLinkText(text);
   }
+
   cancel = () => {
     this.setState({isEditing: false});
   }
+
   handleLinkClick = () => {
     this.setState({isEditing: true});
   }
+
   handleInputBlur = () => {
     if (this.props.onBlur) {
       this.props.onBlur();
@@ -57,6 +60,7 @@ export default class EditableSelect extends React.Component {
       this.cancel();
     }
   }
+
   setLinkText(text) {
     this.state.text = text;
     this.state.textStyle = {
@@ -65,6 +69,7 @@ export default class EditableSelect extends React.Component {
         : null
     };
   }
+
   convertOptions = (options) => {
     if (!options) {
       return null;
@@ -85,13 +90,29 @@ export default class EditableSelect extends React.Component {
       const selectClassName = `form-control input-sm ${this.props.className}`;
       return (
         <XEditable isLoading={false} save={this.save} cancel={this.cancel}>
-          <select ref='el' className={selectClassName} id={this.props.id} name={this.props.name} defaultValue={this.state.value} onBlur={this.handleInputBlur} autoFocus>
+          <select
+            ref='el'
+            className={selectClassName}
+            id={this.props.id}
+            name={this.props.name}
+            defaultValue={this.state.value}
+            onBlur={this.handleInputBlur}
+            autoFocus
+          >
             {options}
           </select>
         </XEditable>
       );
     } else {
-      return <a href='javascript:;' className='editable editable-click' style={this.state.textStyle} onClick={this.handleLinkClick}>{this.state.text || this.state.defaultText }</a>;
+      return (
+        <a href='javascript:;'
+          className='editable editable-click'
+          style={this.state.textStyle}
+          onClick={this.handleLinkClick}
+        >
+          {this.state.text || this.state.defaultText }
+        </a>
+      );
     }
   }
 }

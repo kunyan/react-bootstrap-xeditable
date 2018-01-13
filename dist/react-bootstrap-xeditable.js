@@ -1122,14 +1122,26 @@ var EditableSelect = function (_React$Component) {
           { isLoading: false, save: this.save, cancel: this.cancel },
           _react2.default.createElement(
             'select',
-            { ref: 'el', className: selectClassName, id: this.props.id, name: this.props.name, defaultValue: this.state.value, onBlur: this.handleInputBlur, autoFocus: true },
+            {
+              ref: 'el',
+              className: selectClassName,
+              id: this.props.id,
+              name: this.props.name,
+              defaultValue: this.state.value,
+              onBlur: this.handleInputBlur,
+              autoFocus: true
+            },
             options
           )
         );
       } else {
         return _react2.default.createElement(
           'a',
-          { href: 'javascript:;', className: 'editable editable-click', style: this.state.textStyle, onClick: this.handleLinkClick },
+          { href: 'javascript:;',
+            className: 'editable editable-click',
+            style: this.state.textStyle,
+            onClick: this.handleLinkClick
+          },
           this.state.text || this.state.defaultText
         );
       }
@@ -1247,7 +1259,18 @@ var EditableTextArea = function (_React$Component) {
         return _react2.default.createElement(
           _XEditable2.default,
           { isLoading: false, save: this.save, cancel: this.cancel },
-          _react2.default.createElement('textarea', { ref: 'el', id: this.props.id, className: textareaClassName, rows: this.props.rows, cols: this.props.cols, name: this.props.name, defaultValue: this.props.value, placeholder: this.props.placeholder, onBlur: this.handleInputBlur, autoFocus: true })
+          _react2.default.createElement('textarea', {
+            ref: 'el',
+            id: this.props.id,
+            className: textareaClassName,
+            rows: this.props.rows,
+            cols: this.props.cols,
+            name: this.props.name,
+            defaultValue: this.props.value,
+            placeholder: this.props.placeholder,
+            onBlur: this.handleInputBlur,
+            autoFocus: true
+          })
         );
       } else {
         var aClassName = 'editable editable-click';
@@ -1262,7 +1285,11 @@ var EditableTextArea = function (_React$Component) {
         }
         return _react2.default.createElement(
           'a',
-          { href: 'javascript:;', className: aClassName, style: this.state.textStyle, onClick: this.handleLinkClick },
+          { href: 'javascript:;',
+            className: aClassName,
+            style: this.state.textStyle,
+            onClick: this.handleLinkClick
+          },
           content
         );
       }
@@ -1382,7 +1409,17 @@ var EditableTextField = function (_React$Component) {
         return _react2.default.createElement(
           _XEditable2.default,
           { isLoading: false, save: this.save, cancel: this.cancel },
-          _react2.default.createElement('input', { ref: 'el', id: this.props.id, type: 'text', className: inputClassName, name: this.props.name, defaultValue: this.props.value, placeholder: this.props.placeholder, onBlur: this.handleInputBlur, autoFocus: true }),
+          _react2.default.createElement('input', {
+            ref: 'el',
+            id: this.props.id,
+            type: 'text',
+            className: inputClassName,
+            name: this.props.name,
+            defaultValue: this.props.value,
+            placeholder: this.props.placeholder,
+            onBlur: this.handleInputBlur,
+            autoFocus: true
+          }),
           _react2.default.createElement('span', { className: 'editable-clear-x', onClick: this.clear })
         );
       } else {
@@ -1392,7 +1429,11 @@ var EditableTextField = function (_React$Component) {
         }
         return _react2.default.createElement(
           'a',
-          { href: 'javascript:;', className: aClassName, style: this.state.textStyle, onClick: this.handleLinkClick },
+          { href: 'javascript:;',
+            className: aClassName,
+            style: this.state.textStyle,
+            onClick: this.handleLinkClick
+          },
           this.props.value || this.state.defaultText
         );
       }
