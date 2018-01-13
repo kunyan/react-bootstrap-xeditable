@@ -10,6 +10,7 @@ export default class EditableTextField extends React.Component {
     value: PropTypes.node,
     placeholder: PropTypes.string,
     onUpdate: PropTypes.func.isRequired,
+    onBlur: PropTypes.func,
     defaultText: PropTypes.node,
   };
   constructor(props) {
@@ -36,7 +37,11 @@ export default class EditableTextField extends React.Component {
     this.setState({isEditing: true});
   }
   handleInputBlur = () => {
-    this.cancel();
+    if (this.props.onBlur) {
+      this.props.onBlur();
+    } else {
+      this.cancel();
+    }
   }
   render() {
     if (this.state.isEditing) {

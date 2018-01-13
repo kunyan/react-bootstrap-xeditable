@@ -9,6 +9,7 @@ export default class EditableSelect extends React.Component {
     className: PropTypes.string,
     value: PropTypes.node,
     onUpdate: PropTypes.func.isRequired,
+    onBlur: PropTypes.func,
     options: PropTypes.array,
     defaultText: PropTypes.node,
   }
@@ -50,7 +51,11 @@ export default class EditableSelect extends React.Component {
     this.setState({isEditing: true});
   }
   handleInputBlur = () => {
-    this.cancel();
+    if (this.props.onBlur) {
+      this.props.onBlur();
+    } else {
+      this.cancel();
+    }
   }
   setLinkText(text) {
     this.state.text = text;

@@ -1058,7 +1058,11 @@ var EditableSelect = function (_React$Component) {
     };
 
     _this.handleInputBlur = function () {
-      _this.cancel();
+      if (_this.props.onBlur) {
+        _this.props.onBlur();
+      } else {
+        _this.cancel();
+      }
     };
 
     _this.convertOptions = function (options) {
@@ -1140,6 +1144,7 @@ EditableSelect.propTypes = {
   className: _propTypes2.default.string,
   value: _propTypes2.default.node,
   onUpdate: _propTypes2.default.func.isRequired,
+  onBlur: _propTypes2.default.func,
   options: _propTypes2.default.array,
   defaultText: _propTypes2.default.node
 };
@@ -1218,7 +1223,11 @@ var EditableTextArea = function (_React$Component) {
     };
 
     _this.handleInputBlur = function () {
-      _this.cancel();
+      if (_this.props.onBlur) {
+        _this.props.onBlur();
+      } else {
+        _this.cancel();
+      }
     };
 
     _this.state = {
@@ -1271,6 +1280,7 @@ EditableTextArea.propTypes = {
   cols: _propTypes2.default.number,
   placeholder: _propTypes2.default.string,
   onUpdate: _propTypes2.default.func.isRequired,
+  onBlur: _propTypes2.default.func,
   defaultText: _propTypes2.default.node
 };
 exports.default = EditableTextArea;
@@ -1348,7 +1358,11 @@ var EditableTextField = function (_React$Component) {
     };
 
     _this.handleInputBlur = function () {
-      _this.cancel();
+      if (_this.props.onBlur) {
+        _this.props.onBlur();
+      } else {
+        _this.cancel();
+      }
     };
 
     _this.state = {
@@ -1394,6 +1408,7 @@ EditableTextField.propTypes = {
   value: _propTypes2.default.node,
   placeholder: _propTypes2.default.string,
   onUpdate: _propTypes2.default.func.isRequired,
+  onBlur: _propTypes2.default.func,
   defaultText: _propTypes2.default.node
 };
 exports.default = EditableTextField;

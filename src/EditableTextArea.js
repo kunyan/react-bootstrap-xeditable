@@ -12,6 +12,7 @@ export default class EditableTextArea extends React.Component {
     cols: PropTypes.number,
     placeholder: PropTypes.string,
     onUpdate: PropTypes.func.isRequired,
+    onBlur: PropTypes.func,
     defaultText: PropTypes.node
   };
   constructor(props) {
@@ -38,7 +39,11 @@ export default class EditableTextArea extends React.Component {
     this.setState({isEditing: true});
   }
   handleInputBlur = () => {
-    this.cancel();
+    if (this.props.onBlur) {
+      this.props.onBlur();
+    } else {
+      this.cancel();
+    }
   }
   render() {
     if (this.state.isEditing) {

@@ -65,7 +65,11 @@ var EditableTextField = function (_React$Component) {
     };
 
     _this.handleInputBlur = function () {
-      _this.cancel();
+      if (_this.props.onBlur) {
+        _this.props.onBlur();
+      } else {
+        _this.cancel();
+      }
     };
 
     _this.state = {
@@ -111,6 +115,7 @@ EditableTextField.propTypes = {
   value: _propTypes2.default.node,
   placeholder: _propTypes2.default.string,
   onUpdate: _propTypes2.default.func.isRequired,
+  onBlur: _propTypes2.default.func,
   defaultText: _propTypes2.default.node
 };
 exports.default = EditableTextField;

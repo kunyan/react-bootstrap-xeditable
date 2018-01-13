@@ -30,7 +30,13 @@ import bootstrap css and xeditable css
 ```html
 import {EditableTextField} from 'react-bootstrap-xeditable';
 
-<EditableTextField name='username' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your username'/>
+<EditableTextField
+  name='username'
+  value={this.state.value}
+  onUpdate={this.handleUpdate}  # Required
+  onBlur={this.handleBlur}
+  placeholder='Please input your username'
+/>
 ```
 
 ### Select
@@ -54,7 +60,12 @@ const options = [
 ```html
 import {EditableSelect} from 'react-bootstrap-xeditable';
 
-<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options}/>
+<EditableSelect
+  name='country'
+  onUpdate={this.handleUpdate}  # Required
+  value={this.state.value}
+  options={options}
+/>
 ```
 
 ## Progress:
@@ -77,7 +88,6 @@ d.ts already intergrated. just import it.
 ## Known Issues:
 
 1. Only support inline mode
-2. onBlur not support yet
 
 
 ## License
