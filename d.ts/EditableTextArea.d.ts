@@ -1,19 +1,19 @@
 // Import React
-import React from 'react';
+import * as React from 'react';
 
 // <EditableTextArea />
 // ----------------------------------------
-export interface EditableTextAreaProps extends React.Props<EditableTextAreaClass> {
-  id?: string;
-  name?: string;
-  value?: string;
-  className?: string;
-  rows: number,
-  cols: number,
-  placeholder?: string;
-  onUpdate: Function;
-  defaultText?: any;
+export interface IEditableTextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  isEditing?: boolean;
+  isEditable?: boolean;
+  linkClassName?: string;
+  nonValueText?: string;
+  onSaving?: boolean;
+  value: string;
+  onSave: (value: string | number | string[]) => void;
+  onCancel?: () => void;
 }
-export interface EditableTextArea extends React.ReactElement<EditableTextAreaProps> { }
-export interface EditableTextAreaClass extends React.ComponentClass<EditableTextAreaProps> { }
+
+export interface EditableTextArea extends React.ReactElement<IEditableTextAreaProps> { }
+export interface EditableTextAreaClass extends React.ComponentClass<IEditableTextAreaProps> { }
 export const EditableTextField: EditableTextAreaClass;

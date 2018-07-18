@@ -1,17 +1,25 @@
 // Import React
-import React from 'react';
+import * as React from 'react';
 
 // <EditableSelect />
 // ----------------------------------------
-export interface EditableSelectProps extends React.Props<EditableSelectClass> {
-  id?: string;
-  name?: string;
-  value?: string;
-  className?: string;
-  options?: Array<any>;
-  onUpdate: Function;
-  defaultText?: any;
+export interface IOption {
+  text: string;
+  value: string | boolean | number;
 }
-export interface EditableSelect extends React.ReactElement<EditableSelectProps> { }
-export interface EditableSelectClass extends React.ComponentClass<EditableSelectProps> { }
+
+export interface IEditableSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  isEditing?: boolean;
+  isEditable?: boolean;
+  linkClassName?: string;
+  nonValueText?: string;
+  onSaving?: boolean;
+  value: string;
+  onSave: (value: string | number | string[]) => void;
+  onCancel?: () => void;
+  options: string[] | IOption[];
+}
+
+export interface EditableSelect extends React.ReactElement<IEditableSelectProps> {}
+export interface EditableSelectClass extends React.ComponentClass<IEditableSelectProps> {}
 export const EditableSelect: EditableSelectClass;
