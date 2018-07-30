@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-xeditable",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -27,7 +27,7 @@
     "url": "git+https://github.com/kunyan/react-bootstrap-xeditable.git"
   },
   "author": "Kun Yan <kyan@redhat.com>",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kunyan/react-bootstrap-xeditable/issues"
   },

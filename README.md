@@ -81,5 +81,5 @@ d.ts already intergrated. just import it.
 
 
 ## License
-Licensed under the GPL-3.0 license.
-Copyright (C) 2016 Kun Yan
+Licensed under the MIT license.
+Copyright (C) 2018 Kun Yan
