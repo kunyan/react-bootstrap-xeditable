@@ -8,7 +8,6 @@ export interface IEditableTextFieldProps extends React.InputHTMLAttributes<HTMLI
   isEditable?: boolean;
   linkClassName?: string;
   nonValueText?: string;
-  onSaving?: boolean;
   value: string;
   onSave: (value: string | number | string[]) => void;
   onCancel?: () => void;

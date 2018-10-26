@@ -4,8 +4,10 @@ import * as React from 'react';
 // <EditableSelect />
 // ----------------------------------------
 export interface IOption {
+  label?: string;
   text: string;
-  value: string | boolean | number;
+  value: string | number;
+  disabled?: boolean;
 }
 
 export interface IEditableSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
@@ -13,9 +15,8 @@ export interface IEditableSelectProps extends React.SelectHTMLAttributes<HTMLSel
   isEditable?: boolean;
   linkClassName?: string;
   nonValueText?: string;
-  onSaving?: boolean;
-  value: string;
-  onSave: (value: string | number | string[]) => void;
+  value: string | string[];
+  onSave: (value: string | string[] | number) => void;
   onCancel?: () => void;
   options: string[] | IOption[];
 }
