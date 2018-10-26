@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render EditableTextArea and Click it 1`] = `
+<EditableTextArea
+  isEditable={true}
+  name="test"
+  onSave={[Function]}
+  value="Hello world"
+>
+  <XEditable
+    isLoading={false}
+    onCancel={[Function]}
+    onSave={[Function]}
+  >
+    <span
+      className="editable-container editable-inline"
+    >
+      <div
+        className="form-inline editableform"
+      >
+        <div
+          className="control-group form-group"
+        >
+          <div>
+            <div
+              className="editable-input"
+              style={
+                Object {
+                  "position": "relative",
+                }
+              }
+            >
+              <textarea
+                name="test"
+                onChange={[Function]}
+                value="Hello world"
+              />
+            </div>
+            <div
+              className="editable-buttons"
+            >
+              <button
+                className="btn btn-primary btn-sm editable-submit"
+                onClick={[Function]}
+                type="submit"
+              >
+                <i
+                  className="glyphicon glyphicon-ok"
+                />
+              </button>
+              <button
+                className="btn btn-default btn-sm editable-cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="glyphicon glyphicon-remove"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="editable-error-block help-block"
+          />
+        </div>
+      </div>
+    </span>
+  </XEditable>
+</EditableTextArea>
+`;
+
+exports[`renders correctly 1`] = `
+<a
+  className="editable editable-click"
+  href="javascript:;"
+  onClick={[Function]}
+>
+  <pre>
+    Hello world
+     
+  </pre>
+</a>
+`;

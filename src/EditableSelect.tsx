@@ -47,6 +47,9 @@ export default class EditableTextArea extends React.Component<IEditableSelectPro
   }
 
   findSelectedOptions(value: string | string[] | number) {
+    if (!value) {
+      return [];
+    }
     const options = this.getOptions();
     if (this.props.multiple) {
       const values = value as string[];
