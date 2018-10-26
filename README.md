@@ -30,8 +30,20 @@ import bootstrap css and xeditable css
 ```html
 import {EditableTextField} from 'react-bootstrap-xeditable';
 
-<EditableTextField name='username' value={this.state.value} onUpdate={this.handleUpdate} placeholder='Please input your username'/>
+<EditableTextField name='username' value={this.state.value} onSave={this.onSave} placeholder='Please input your username'/>
 ```
+#### Options
+| Option | Type | Required | Description |
+| ------| ------ | ------ |------ |
+| isEditing| boolean | optional | Set editing status |
+| isEditable| boolean | optional | You can make it readonly |
+| linkClassName| string | optional | Defined the css class for the link text |
+| nonValueText| string | optional | the default text if no value |
+| value| string | required | The value of input text |
+| onSave| function | required | the callback when click save button |
+| onCancel| function | optional | the callback when click cancel button |
+| placeholder | string | optional| |
+
 
 ### Select
 ```javascript
@@ -54,8 +66,40 @@ const options = [
 ```html
 import {EditableSelect} from 'react-bootstrap-xeditable';
 
-<EditableSelect name='country' onUpdate={this.handleUpdate} value={this.state.value} options={options}/>
+<EditableSelect name='country' onSave={this.onSave} value={this.state.value} options={options}/>
 ```
+
+#### Options
+| Option | Type | Required | Description |
+| ------| ------ | ------ |------ |
+| isEditing| boolean | optional | Set editing status |
+| isEditable| boolean | optional | You can make it readonly |
+| linkClassName| string | optional | Defined the css class for the link text |
+| nonValueText| string | optional | the default text if no value |
+| value| string | string[] | required | The value of input text |
+| multiple| boolean | optional | If the select support multiple |
+| options| IOption[] | string[] | required | The options |
+| onSave| function | required | the callback when click save button |
+| onCancel| function | optional | the callback when click cancel button |
+
+
+### TextArea
+```html
+import {EditableTextArea} from 'react-bootstrap-xeditable';
+
+<EditableTextArea name='username' value={this.state.value} onSave={this.onSave} placeholder='Please input your username'/>
+```
+
+#### Options
+| Option | Type | Required | Description |
+| ------| ------ | ------ |------ |
+| isEditing| boolean | optional | Set editing status |
+| isEditable| boolean | optional | You can make it readonly |
+| linkClassName| string | optional | Defined the css class for the link text |
+| nonValueText| string | optional | the default text if no value |
+| value| string | required | The value of input text |
+| onSave| function | required | the callback when click save button |
+| onCancel| function | optional | the callback when click cancel button |
 
 ## Progress:
 * :white_check_mark: : Supported
@@ -82,4 +126,4 @@ d.ts already intergrated. just import it.
 
 ## License
 Licensed under the GPL-3.0 license.
-Copyright (C) 2016 Kun Yan
+Copyright (C) 2018 Kun Yan

@@ -32,7 +32,10 @@ export default class EditableTextArea extends React.Component<IEditableTextAreaP
     this.setState({
       value: event.currentTarget.value
     });
-    this.props.onChange && this.props.onChange(event);
+
+    if (this.props.onChange) {
+      this.props.onChange(event);
+    }
   };
 
   onSave = () => {
@@ -46,8 +49,11 @@ export default class EditableTextArea extends React.Component<IEditableTextAreaP
     this.setState({
       isEditing: false,
       value: this.props.value || ''
-    }),
-      this.props.onCancel && this.props.onCancel();
+    });
+
+    if (this.props.onCancel) {
+      this.props.onCancel();
+    }
   };
 
   onLinkClick = () => {
@@ -86,8 +92,7 @@ export default class EditableTextArea extends React.Component<IEditableTextAreaP
     } else {
       return (
         <a href="javascript:;" className={classNames.join(' ')} onClick={this.onLinkClick}>
-          <pre>{this.props.value || this.props.nonValueText}} </pre>
-
+          <pre>{this.props.value || this.props.nonValueText} </pre>
         </a>
       );
     }

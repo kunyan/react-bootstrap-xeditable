@@ -6,7 +6,6 @@ export interface IEditableTextFieldProps extends React.InputHTMLAttributes<HTMLI
   isEditable?: boolean;
   linkClassName?: string;
   nonValueText?: string;
-  onSaving?: boolean;
   value: string;
   onSave: (value: string | number | string[]) => void;
   onCancel?: () => void;
@@ -19,8 +18,8 @@ interface IState {
 
 export default class EditableTextField extends React.Component<IEditableTextFieldProps, IState> {
   static defaultProps: Partial<IEditableTextFieldProps> = {
-    isEditable: true,
-  }
+    isEditable: true
+  };
 
   state: IState = {
     isEditing: !!this.props.isEditing,
@@ -32,7 +31,10 @@ export default class EditableTextField extends React.Component<IEditableTextFiel
     this.setState({
       value: event.currentTarget.value
     });
-    this.props.onChange && this.props.onChange(event);
+
+    if (this.props.onChange) {
+      this.props.onChange(event);
+    }
   };
 
   onSave = () => {
@@ -46,8 +48,11 @@ export default class EditableTextField extends React.Component<IEditableTextFiel
     this.setState({
       isEditing: false,
       value: this.props.value || ''
-    }),
-      this.props.onCancel && this.props.onCancel();
+    });
+
+    if (this.props.onCancel) {
+      this.props.onCancel();
+    }
   };
 
   onClear = () => {
@@ -76,7 +81,7 @@ export default class EditableTextField extends React.Component<IEditableTextFiel
 
   renderIcon() {
     if (!this.state.value || this.state.value === '') {
-      return <span className="glyphicon glyphicon-pencil"/>
+      return <span className="glyphicon glyphicon-pencil" />;
     }
     return;
   }
@@ -92,7 +97,7 @@ export default class EditableTextField extends React.Component<IEditableTextFiel
     }
 
     if (this.props.linkClassName) {
-      classNames.concat(this.props.linkClassName.split(' '))
+      classNames.concat(this.props.linkClassName.split(' '));
     }
 
     if (this.state.isEditing) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface IProps {
   isLoading?: boolean;
@@ -12,12 +12,12 @@ export default class XEditable extends React.PureComponent<IProps> {
   };
 
   onClickSaveButton = () => {
-      this.props.onSave();
-  }
+    this.props.onSave();
+  };
 
   onClickCancelButton = () => {
-      this.props.onCancel();
-  }
+    this.props.onCancel();
+  };
 
   renderBody() {
     if (this.props.isLoading) {
@@ -30,24 +30,21 @@ export default class XEditable extends React.PureComponent<IProps> {
               <div
                 className="editable-input"
                 style={{
-                  position: "relative"
-                }}
-              >
+                  position: 'relative'
+                }}>
                 {this.props.children}
               </div>
               <div className="editable-buttons">
                 <button
                   type="submit"
                   className="btn btn-primary btn-sm editable-submit"
-                  onClick={this.onClickSaveButton}
-                >
+                  onClick={this.onClickSaveButton}>
                   <i className="glyphicon glyphicon-ok" />
                 </button>
                 <button
                   type="button"
                   className="btn btn-default btn-sm editable-cancel"
-                  onClick={this.onClickCancelButton}
-                >
+                  onClick={this.onClickCancelButton}>
                   <i className="glyphicon glyphicon-remove" />
                 </button>
               </div>
@@ -60,10 +57,6 @@ export default class XEditable extends React.PureComponent<IProps> {
   }
 
   render() {
-    return (
-      <span className="editable-container editable-inline">
-        {this.renderBody()}
-      </span>
-    );
+    return <span className="editable-container editable-inline">{this.renderBody()}</span>;
   }
 }

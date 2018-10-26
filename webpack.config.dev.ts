@@ -24,6 +24,12 @@ const devConfig: webpack.Configuration = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        exclude: /node_modules/,
+        test: /\.tsx?$/,
+        use: 'tslint-loader'
+      },
+      {
         test: /\.tsx?$/,
         use: 'ts-loader'
         // exclude: /node_modules/
